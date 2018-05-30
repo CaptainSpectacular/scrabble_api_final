@@ -27,7 +27,7 @@ describe InflectionPresenter do
           bad = WordValidator.new('farquad')
           presenter = InflectionPresenter.new(bad)
         
-          expect(presenter.validation).to eq('farquad is not a valid word.')
+          expect(presenter.validation).to eq("'farquad' is not a valid word.")
         end
       end
     end

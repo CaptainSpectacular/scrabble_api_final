@@ -15,6 +15,6 @@ class InflectionPresenter
   end
 
   def invalid_message
-    "#{@validator.word} is not a valid word."
+    "'#{@validator.word}' is not a valid word."
   end
 end
