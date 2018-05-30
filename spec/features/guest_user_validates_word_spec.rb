@@ -1,13 +1,11 @@
 require 'rails_helper'
 
 feature 'guest user validates word' do
-
-
   describe 'searching for a word' do
 
   background do 
     visit root_path
-    fill_in('q'), with: 'foxes'
+    fill_in 'q', with: 'foxes'
     click_on 'Validate Word'
   end
 
