@@ -4,8 +4,6 @@ class Api::V1::Games::PlaysController < ActionController::API
 
   def create
     @user.plays.create(play_params)
-    @user.score += @user.plays.last.score
-    @user.save
     render json: { 'status' => 'you made your move' }.to_json, status: 201
   end
 
