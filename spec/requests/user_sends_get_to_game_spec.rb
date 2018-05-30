@@ -2,7 +2,7 @@ require 'rails_helper'
 
 context 'user can get game info' do
   context 'they send a get request' do
-    scenario 'they send a GET to api/v1/games/:id' do
+    scenario 'they send a GET to api/v1/games/1' do
       expected = {
                   "game_id":1,
                   "scores": [
@@ -16,7 +16,7 @@ context 'user can get game info' do
                        }
                       ]
                       }
-      get "api/v1/games/#{game.id}"
+      get "http://localhost:3000/api/v1/games/1"
       anticipated = JSON.parse(response.body)
      
       expect(anticipated).to eq(expected)
