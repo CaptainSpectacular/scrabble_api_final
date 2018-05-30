@@ -18,8 +18,7 @@ context 'user can get game info' do
                       ]
                       }
       get "http://localhost:3000/api/v1/games/#{game.id}"
-      binding.pry
-      anticipated = JSON.parse(response.body)
+      anticipated = JSON.parse(response.body, symbolize_names: true)
      
       expect(anticipated).to eq(expected)
     end
