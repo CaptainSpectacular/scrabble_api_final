@@ -11,7 +11,7 @@ class InflectionPresenter
   end
   
   def valid_message
-    "#{@validator.word} is a valid word and it's root form is #{@validator.root}"
+    "'#{@validator.word}' is a valid word and its root form is '#{@validator.root}'"
   end
 
   def invalid_message

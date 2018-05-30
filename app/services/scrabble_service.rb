@@ -4,11 +4,6 @@ class ScrabbleService
     @word = word
   end
 
-  def get_root
-    binding.pry
-    JSON.parse(get("entries/en/#{@word}"), symbolize_names: true)
-  end
-
   def get_inflection
     request = get("inflections/en/#{@word}")
 

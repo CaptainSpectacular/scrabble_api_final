@@ -11,8 +11,7 @@ class WordValidator
   end
 
   def root
-    @root ||= service.get_root
-    @root[:results].first[:lexicalEntries].first[:derivativeOf]
+    @valid[:results][0][:lexicalEntries][0][:inflectionOf][0][:text]
   end
 
   private

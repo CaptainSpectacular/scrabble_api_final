@@ -17,7 +17,7 @@ describe InflectionPresenter do
       it 'returns a valid message' do
         VCR.use_cassette('inflection_valid') do
           VCR.use_cassette('word_root') do
-            expect(presenter.validation).to include('genius is a valid word')
+            expect(presenter.validation).to include("'genius' is a valid word")
           end
         end
       end
