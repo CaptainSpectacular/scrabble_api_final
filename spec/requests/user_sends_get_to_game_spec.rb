@@ -2,23 +2,23 @@ require 'rails_helper'
 
 context 'user can get game info' do
   context 'they send a get request' do
-    let(:game) { create(:game) }
     scenario 'they send a GET to api/v1/games/1' do
-      binding.pry
+      game = create(:game)
       expected = {
-                  "game_id":1,
+                  "game_id": game.id,
                   "scores": [
                      {
-                      "user_id":1,
-                      "score":15
+                      "user_id":game.player_1.id,
+                      "score": game.player_1.score
                       },
                       {
-                        "user_id":2,
-                        "score":16
+                        "user_id": game.player_2.id,
+                        "score": game.player_2.score
                        }
                       ]
                       }
-      get "http://localhost:3000/api/v1/games/1"
+      get "http://localhost:3000/api/v1/games/#{game.id}"
+      binding.pry
       anticipated = JSON.parse(response.body)
      
       expect(anticipated).to eq(expected)

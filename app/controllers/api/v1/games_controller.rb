@@ -1,6 +1,6 @@
-class Api::V1::GamesController < ActionController::API 
+class Api::V1::GamesController < ActionController::API
+
   def show
-    binding.pry
-    render json: Game.all
+    render json: Game.find(params[:id]) 
   end
 end
