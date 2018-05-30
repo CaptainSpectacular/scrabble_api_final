@@ -5,6 +5,7 @@ class ScrabbleService
   end
 
   def get_root
+    binding.pry
     JSON.parse(get("entries/en/#{@word}"), symbolize_names: true)
   end
 

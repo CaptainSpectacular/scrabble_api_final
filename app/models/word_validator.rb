@@ -12,7 +12,7 @@ class WordValidator
 
   def root
     @root ||= service.get_root
-    binding.pry
+    @root[:results].first[:lexicalEntries].first[:derivativeOf]
   end
 
   private
