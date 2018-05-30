@@ -6,8 +6,13 @@ class WordValidator
   end
 
   def valid?
-    @valid ||= service.get_inflection(@word)
+    @valid ||= service.get_inflection
     @valid.is_a?(Hash)
+  end
+
+  def root
+    @root ||= service.get_root
+    binding.pry
   end
 
   private

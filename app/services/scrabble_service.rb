@@ -1,11 +1,15 @@
 class ScrabbleService
   
   def initialize(word)
-    @url = "inflections/en/#{word}" 
+    @word = word
   end
 
-  def get_inflection(word)
-    request = get("inflections/en/#{word}")
+  def get_root
+    JSON.parse(get("entries/en/#{@word}"), symbolize_names: true)
+  end
+
+  def get_inflection
+    request = get("inflections/en/#{@word}")
 
     case request.include?('<')
     when true then false 
