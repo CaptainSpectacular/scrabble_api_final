@@ -2,8 +2,6 @@ class Play < ApplicationRecord
   belongs_to :user
   belongs_to :game
 
-  before_save :score_word
-
   def letter_scores
     {
       "A"=>1, "B"=>3, "C"=>3, "D"=>2, "E"=>1, "F"=>4, "G"=>2, "H"=>4, "I"=>1, "J"=>8,
@@ -12,8 +10,22 @@ class Play < ApplicationRecord
     }
   end
 
+  def score
+    update(score: score_word) unless self[:score]
+    self[:score]
+  end
+
   private
 
     def score_word
+      letters.map(&rate).sum
+    end
+
+    def rate 
+      ->(element) { letter_scores["#{element.upcase}"] }
+    end
+
+    def letters
+      word.chars
     end
 end
