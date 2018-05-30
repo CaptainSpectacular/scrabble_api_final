@@ -2,7 +2,9 @@ require 'rails_helper'
 
 context 'user can get game info' do
   context 'they send a get request' do
+    let(:game) { create(:game) }
     scenario 'they send a GET to api/v1/games/1' do
+      binding.pry
       expected = {
                   "game_id":1,
                   "scores": [
