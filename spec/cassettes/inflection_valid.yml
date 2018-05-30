@@ -1,0 +1,90 @@
+---
+http_interactions:
+- request:
+    method: get
+    uri: https://od-api.oxforddictionaries.com/api/v1/inflections/en/genius
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      User-Agent:
+      - Faraday v0.15.1
+      App-Id:
+      - b0d90990
+      App-Key:
+      - f1ee25ddec99ee809a81af4423a83f50
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Content-Type:
+      - application/json;charset=utf-8
+      Date:
+      - Wed, 30 May 2018 15:31:39 GMT
+      Server:
+      - openresty/1.9.7.4
+      Version:
+      - v1.10.0-19-g9c8abf9
+      Content-Length:
+      - '1403'
+      Connection:
+      - keep-alive
+    body:
+      encoding: UTF-8
+      string: |-
+        {
+            "metadata": {
+                "provider": "Oxford University Press"
+            },
+            "results": [
+                {
+                    "id": "genius",
+                    "language": "en",
+                    "lexicalEntries": [
+                        {
+                            "grammaticalFeatures": [
+                                {
+                                    "text": "Singular",
+                                    "type": "Number"
+                                }
+                            ],
+                            "inflectionOf": [
+                                {
+                                    "id": "genius",
+                                    "text": "genius"
+                                }
+                            ],
+                            "language": "en",
+                            "lexicalCategory": "Noun",
+                            "text": "genius"
+                        },
+                        {
+                            "grammaticalFeatures": [
+                                {
+                                    "text": "Positive",
+                                    "type": "Degree"
+                                }
+                            ],
+                            "inflectionOf": [
+                                {
+                                    "id": "genius",
+                                    "text": "genius"
+                                }
+                            ],
+                            "language": "en",
+                            "lexicalCategory": "Adjective",
+                            "text": "genius"
+                        }
+                    ],
+                    "word": "genius"
+                }
+            ]
+        }
+    http_version: 
+  recorded_at: Wed, 30 May 2018 15:30:46 GMT
+recorded_with: VCR 4.0.0
