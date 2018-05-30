@@ -2,8 +2,10 @@ class Api::V1::Games::PlaysController < ActionController::API
   before_action :set_user, only: :create
 
   def create
-    binding.pry
-    Play.create(play_params)
+    @user.plays.create(play_params)
+    @user.score += @user.plays.last.score
+    @user.save
+    render json: { 'status' => 'you made your move' }.to_json, status: 201
   end
 
 
