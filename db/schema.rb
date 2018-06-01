@@ -39,7 +39,7 @@ ActiveRecord::Schema.define(version: 20180530164605) do
     t.string "name"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.integer "score"
+    t.integer "score", default: 0
   end
 
   add_foreign_key "games", "users", column: "player_1_id"
